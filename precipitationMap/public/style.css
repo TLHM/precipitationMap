@@ -1,0 +1,27 @@
+h1 {
+   color: #bfdac5;
+   margin: 0;
+}
+
+h2{
+   color: #bfdac5;
+   margin: 0;
+}
+
+.buttonNeutral{
+   color: #b4d963;
+   background-color: #838985;
+   text-align: center;
+   padding: 5px 0;
+   cursor:pointer;
+   cursor:hand;
+}
+
+.buttonOver{
+   color: #564d5e;
+   background-color: #afb6b1;
+   text-align: center;
+   padding: 5px 0;
+   cursor:pointer;
+   cursor:hand;
+}
