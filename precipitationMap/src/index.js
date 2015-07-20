@@ -22,7 +22,7 @@ var scene = FamousEngine.createScene();
 var Container = scene.addChild();
 
 // Create an DOM element for the Background
-new DOMElement(Container, { properties: { backgroundColor:"#232724" } });
+new DOMElement(Container, { properties: { backgroundColor:Colors.vdBase } });
 
 //Create a globe node
 var globeNode = Container.addChild();
@@ -30,15 +30,15 @@ var globeNode = Container.addChild();
 // Set globe properties
 globeNode
    .setSizeMode("absolute","absolute", "absolute")
-   .setAbsoluteSize(500,500,500)
-    // Center the node
-    .setAlign(0.5, 0.5)
+   .setAbsoluteSize(800,800,800)
+    // Position the node on the screen
+    .setAlign(0.6, 0.8)
     // Set the translational origin to the center
     .setMountPoint(0.5, 0.5)
     // Set the rotational origin to the center
     .setOrigin(0.5, 0.5, 0.5)
     //Set the rotation so we can view the relevant part of the world
-    .setRotation(0,220*ctu.deg2Rad,0)
+    .setRotation(0,190*ctu.deg2Rad,0)
 ;
 
 //Add a sphere mesh

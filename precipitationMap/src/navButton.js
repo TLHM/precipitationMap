@@ -74,9 +74,9 @@ navButton.prototype.onReceive = function(event, payload){
 
       //Begin/continue position animation
       if(this.anim.isActive()){
-         this.anim.from(this.anim.get()).to(this.overSize, 'linear', 200);
+         this.anim.from(this.anim.get()).to(this.overSize, 'linear', 100);
       }else{
-         this.anim.set(this.overSize, {duration:200});
+         this.anim.set(this.overSize, {duration:100});
       }
       this.node.requestUpdate(this.id);
 
@@ -87,9 +87,9 @@ navButton.prototype.onReceive = function(event, payload){
 
       //Begin/continue position animation
       if(this.anim.isActive()){
-         this.anim.from(this.anim.get()).to(1, 'linear', 200);
+         this.anim.from(this.anim.get()).to(1, 'linear', 100);
       }else{
-         this.anim.set(1, {duration:200});
+         this.anim.set(1, {duration:100});
       }
       this.node.requestUpdate(this.id);
    }

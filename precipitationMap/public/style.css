@@ -9,7 +9,7 @@ h2{
 }
 
 .buttonNeutral{
-   color: #b4d963;
+   color: #bfdac5;
    background-color: #838985;
    text-align: center;
    padding: 5px 0;
@@ -24,4 +24,8 @@ h2{
    padding: 5px 0;
    cursor:pointer;
    cursor:hand;
+}
+
+a{
+   color: #bfdac5;
 }

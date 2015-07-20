@@ -1,6 +1,4 @@
-//1000 data points from the continental US
-
-var data = [
+[
 {
 	StationName : "CAW00064757",
 	Latitude : 44.2325,
@@ -17965,6 +17963,4 @@ var data = [
 	Nov : 217,
 	Dec : 173,
 },
-];
-
-module.exports = data;
+]

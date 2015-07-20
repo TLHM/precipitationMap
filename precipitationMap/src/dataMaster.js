@@ -22,10 +22,14 @@ function dataMaster(node, options){
    this.data = require('./myData');
 
    //Keeps track of how much of the data we've added
-   this.curPillar = 0;
+   //Don't want full dataset right now
+   this.curPillar = 460;
 
    //Array of pillars
    this.pillars = [];
+
+   //Have we loaded all of the pillars?
+   this.done = false;
 
    //Create a material for the pillars to be displayed with
    //First a shader, it fades out depending on the uv coordinate
@@ -87,6 +91,8 @@ dataMaster.prototype.LonDn = function(){
 
 //Switch which month the pillars are representing data for
 dataMaster.prototype.switchMonth = function(month){
+   if(!this.done) return;
+
    for(var i=0;i<this.pillars.length;i++){
       this.pillars[i].setMonth(month);
    }
@@ -106,14 +112,20 @@ dataMaster.prototype.addPillar = function (index) {
 };
 
 dataMaster.prototype.onUpdate = function onUpdate (time) {
-   //add a pillar
-   this.addPillar(this.curPillar);
-   this.curPillar++;
+   //add some pillars
+   for(var i=0;i<5;i++){
+      this.addPillar(this.curPillar);
+      this.curPillar++;
+
+      if(this.curPillar >= this.data.length) break;
+   }
 
    //If we have more to load
    if(this.curPillar < this.data.length){
       //Keep updating
       this.node.requestUpdate(this.id);
+   }else{
+      this.done = true;
    }
 };
 

@@ -33,7 +33,7 @@ function navigation(node, options){
    //Create a background for the panel
    this.dom = new DOMElement(this.node,{
       properties:{
-         backgroundColor : cp.vdBase,
+         backgroundColor : cp.edBase,
          border: "1px "+cp.dMain+" solid"
       }
    });
@@ -61,7 +61,27 @@ function navigation(node, options){
    ;
 
    //Month names for use in header
-   this.months = ["January","February","March","April","May","June","July","August","September","November","December"];
+   this.months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+   //Create a simple footer
+   this.footerNode = node.addChild();
+
+   this.footer = new DOMElement(this.footerNode,{
+      content:"Data from <a href=\"ftp://ftp.ncdc.noaa.gov/pub/data/normals/1981-2010/\">NOAA</a>",
+      properties:{
+         color: cp.mAcc1,
+         padding:"10px",
+      }
+   });
+
+   this.footerNode
+      .setAlign(0,1)
+      .setMountPoint(0,1)
+      .setPosition(0,-5)
+      .setSizeMode("relative","absolute")
+      .setProportionalSize(.4,1)
+      .setAbsoluteSize(0,30)
+   ;
 
    //pointer to the dataMaster component
    this.dm = options.dm;
@@ -72,10 +92,12 @@ navigation.prototype.onReceive = function(event, payload){
       //Get the button id
       var buttonID = payload.node.getComponent(2).buttonID;
       //Switch our data to that month
-      this.dm.switchMonth(buttonID);
+      if(this.dm && this.dm.done){
+         this.dm.switchMonth(buttonID);
 
-      //Change our header to the proper month
-      this.header.setContent("<h1>Average Monthly Precipitation 1981 - 2010</h1><br><h2>"+this.months[buttonID]+"</h2>");
+         //Change our header to the proper month
+         this.header.setContent("<h1>Average Monthly Precipitation 1981 - 2010</h1><br><h2>"+this.months[buttonID]+"</h2>");
+      }
    }
 }
 
