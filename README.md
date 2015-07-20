@@ -8,7 +8,7 @@ A live build of the project can be found at http://codetako.com/examples/precipi
 
 # Issues
 
-Currently, there are many issues facing this project.
+Currently, there are numerous issues with the current project.
 
 With 1000 datapoints, the application gets quite laggy - a better form of displaying (or focusing on regions and thereby reducing the active data) would be advisable.
 
