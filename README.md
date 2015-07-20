@@ -4,7 +4,7 @@ A short weekend project to display precipitation data from ftp://ftp.ncdc.noaa.g
 
 The project uses the Famous javascript engine and CLI. The Famous project is found in /precipitationMap, while the data, somewhat processed through R and python, is found in /Data
 
-A live build of the project can be found at http://www.codetako.com/Examples/precipitation.html
+A live build of the project can be found at http://codetako.com/examples/precipitation/index.html
 
 # Issues
 
