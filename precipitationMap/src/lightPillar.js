@@ -26,7 +26,7 @@ function lightPillar(node, options){
 
    //Create a visual cylinder
    this.visual = new Mesh(this.node);
-   this.visual.setGeometry('Cylinder');
+   this.visual.setGeometry('Cylinder', {detail:6});
    this.parentRadius = 400;
 
    //Get the data passed in via options

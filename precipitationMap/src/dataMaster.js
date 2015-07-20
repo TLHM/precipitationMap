@@ -23,7 +23,7 @@ function dataMaster(node, options){
 
    //Keeps track of how much of the data we've added
    //Don't want full dataset right now
-   this.curPillar = 460;
+   this.curPillar = 0;//460;
 
    //Array of pillars
    this.pillars = [];
